@@ -1,0 +1,9 @@
+* {
+    font-family: 'Comfortaa', sans-serif !important;
+}
+body {
+    background-color: #0D1821;
+}
+::-webkit-scrollbar {
+    width: 0;
+}

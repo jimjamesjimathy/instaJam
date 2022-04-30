@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,EACI,4CACJ,CACA,KACI,wBACJ,CACA,oBACI,OACJ","file":"main.407e2789.chunk.css","sourcesContent":["* {\r\n    font-family: 'Comfortaa', sans-serif !important;\r\n}\r\nbody {\r\n    background-color: #0D1821;\r\n}\r\n::-webkit-scrollbar {\r\n    width: 0;\r\n}"]}

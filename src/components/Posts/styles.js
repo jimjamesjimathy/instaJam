@@ -11,6 +11,12 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     padding: '10px 20px',
   },
+  loadingContainer: {
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   heading: {
     color: 'rgba(0,183,255, 1)',
     textDecoration: 'none',

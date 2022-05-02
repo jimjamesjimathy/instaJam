@@ -12,7 +12,7 @@ const Posts = ({ setCurrentId }) => {
   if (!posts.length && !isLoading) return 'Couldn\'t find any posts, soory.';
 
   return (
-    isLoading ? <CircularProgress /> : (
+    isLoading ? <div className={classes.loadingContainer}> <CircularProgress size='15rem' style={{color: '#B4CDED'}}/> </div> : (
       <Grid className={classes.mainContainer} container alignItems="stretch" spacing={3}>
         {posts?.map((post) => (
           <Grid key={post._id} item xs={12} sm={12} md={6} lg={3}>

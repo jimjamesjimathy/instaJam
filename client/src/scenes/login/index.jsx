@@ -2,31 +2,35 @@ import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import Form from "./Form";
 
 const Login = () => {
-  const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
+  // IMPORT COLORS
+  const { palette } = useTheme();
+
   return (
-    <Box>
-      <Box
-        width="100%"
-        backgroundColor={theme.palette.first.darkOne}
-        p="1rem 6%"
-        textAlign="center"
-      >
-        <Typography fontWeight="400" fontSize="2rem">
-          instaJam
-        </Typography>
-      </Box>
+    <Box
+      height="100vh"
+      width="100%"
+      backgroundColor={palette.text.main}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
       <Box
         width={isNonMobileScreens ? "50%" : "91%"}
-        p="2rem"
+        padding="1.5rem 5rem"
         m="2rem auto"
         borderRadius="1.5rem"
-        backgroundColor={theme.palette.first.darkOne}
+        backgroundColor={palette.text.two}
       >
-        <Typography fontSize="1.5rem">
-          Welcome to instaJam! A social media site that is pretty cool
-        </Typography>
+        <Box>
+          <Typography variant="h1" margin="0" textAlign="center">
+            Welcome to instaJam
+          </Typography>
+          <Typography variant="h4" paddingBottom="2rem" textAlign="center">
+            Social Media for complete idiots.
+          </Typography>
+        </Box>
         <Form />
       </Box>
     </Box>

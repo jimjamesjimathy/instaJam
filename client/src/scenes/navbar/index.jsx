@@ -29,21 +29,14 @@ const Navbar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = {
-    firstName: "James",
-    lastName: "Kirkwood",
-  };
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
-  const fullName = `${user.firstName} ${user.lastName}`;
+  const fullName = `James Kirkwood`;
 
+  // IMPORT ALL COLORS
   const theme = useTheme();
-  const d1 = theme.palette.first.darkOne;
-  const d2 = theme.palette.first.darkTwo;
-  const d3 = theme.palette.first.darkThree;
-  const d4 = theme.palette.first.darkFour;
 
   return (
-    <FlexBetween padding="1rem 6%" backgroundColor={d2}>
+    <FlexBetween padding="1rem 6%">
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
@@ -91,9 +84,7 @@ const Navbar = () => {
                   pr: "0.25rem",
                   width: "3rem",
                 },
-                "& .MuiSelect-select:focus": {
-                  backgroundColor: "#666",
-                },
+                "& .MuiSelect-select:focus": {},
               }}
               input={<InputBase />}
             >
@@ -164,9 +155,7 @@ const Navbar = () => {
                     pr: "0.25rem",
                     width: "3rem",
                   },
-                  "& .MuiSelect-select:focus": {
-                    backgroundColor: "#666",
-                  },
+                  "& .MuiSelect-select:focus": {},
                 }}
                 input={<InputBase />}
               >

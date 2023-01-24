@@ -10,11 +10,12 @@ import { useSelector } from "react-redux";
 const Home = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
   const { _id, picturePath } = useSelector((state) => state.user);
+  const { palette } = useTheme();
 
   return (
     <Box>
       <Navbar />
-      {/* <Box
+      <Box
         width="100%"
         padding="2rem 6%"
         display={isNonMobileScreens ? "flex" : "block"}
@@ -28,17 +29,17 @@ const Home = () => {
           flexBasis={isNonMobileScreens ? "42%" : undefined}
           mt={isNonMobileScreens ? undefined : "2rem"}
         >
-          <MyPosts picturePath={picturePath} />
-          <PostsWidget userId={_id} />
+          {/* <MyPosts picturePath={picturePath} />
+          <PostsWidget userId={_id} /> */}
         </Box>
-        {isNonMobileScreens && (
+        {/* {isNonMobileScreens && (
           <Box flexBasis="26%">
             <AdvertWidget />
             <Box m="2rem 0" />
             <FriendsList userId={_id} />
           </Box>
-        )}
-      </Box> */}
+        )} */}
+      </Box>
     </Box>
   );
 };

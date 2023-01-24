@@ -1,40 +1,39 @@
 // color design tokens export
 export const shades = {
-  primary: {
-    100: "#4C5454",
-    200: "#3A4040",
-    300: "#272B2B",
-    400: "#131515",
-    500: "#0A0B0B",
+  dark: {
+    100: "#367081",
+    200: "#2A5765",
+    300: "#1E3E48",
+    400: "#12252B",
+    500: "#060C0E",
   },
-  secondary: {
-    100: "#FF715B",
-    200: "#FF3D1F",
-    300: "#F52100",
-    400: "#CC1B00",
-    500: "#A31600",
+  yellow: {
+    100: "#F1DCA7",
+    200: "#ECCE83",
+    300: "#E7C15F",
+    400: "#E2B33C",
+    500: "#D5A220",
   },
-  tertiary: {
-    100: "#63E3D2",
-    200: "#40DDC8",
-    300: "#25D0B9",
-    400: "#1FAD9A",
-    500: "#188B7B",
+  red: {
+    100: "#F3B5A5",
+    200: "#EE9781",
+    300: "#E9795D",
+    400: "#E45C3A",
+    500: "#D7431D",
+  },
+  green: {
+    100: "#9BBF9B",
+    200: "#83AF83",
+    300: "#6BA06A",
+    400: "#5A8958",
+    500: "#4A7048",
   },
   text: {
-    100: "#F5F5F5",
-    200: "#E0E0E0",
-    300: "#CCCCCC",
-    400: "#B8B8B8",
-    500: "#A3A3A3",
-  },
-  accent: {
-    100: "#927063",
-    200: "#795E53",
-    300: "#614B42",
-    400: "#493832",
-    500: "#493832",
-    600: "#F3D9A5", //THIS IS FOR THE MOON AND SUN
+    100: "#FFFFFF",
+    200: "#EBEBEB",
+    300: "#D6D6D6",
+    400: "#C2C2C2",
+    500: "#ADADAD",
   },
 };
 
@@ -46,37 +45,63 @@ export const themeSettings = (mode) => {
       ...(mode === "dark"
         ? {
             // palette values for dark mode
-            first: {
-              darkOne: shades.primary[500],
-              darkTwo: shades.primary[500],
-              darkThree: shades.tertiary[500],
-              darkFour: shades.accent[500],
+            primary: {
+              main: shades.dark[500],
+              two: shades.dark[400],
             },
-            second: {},
-            third: {},
-            fourth: {},
-            fifth: {},
+            secondary: {
+              main: shades.red[500],
+              two: shades.red[400],
+            },
+            tertiary: {
+              main: shades.yellow[500],
+              two: shades.yellow[400],
+            },
+            accent: {
+              main: shades.green[500],
+              two: shades.green[400],
+            },
+            text: {
+              main: shades.text[500],
+              two: shades.text[400],
+            },
           }
         : {
             // palette values for light mode
-            first: {
-              darkOne: shades.text[100],
-              darkTwo: shades.secondary[100],
-              darkThree: shades.tertiary[100],
-              darkFour: shades.accent[100],
+            primary: {
+              main: shades.dark[100],
+              two: shades.dark[200],
+              three: shades.dark[300],
             },
-            second: {},
-            third: {},
-            fourth: {},
-            fifth: {},
+            secondary: {
+              main: shades.red[100],
+              two: shades.red[200],
+              three: shades.red[300],
+            },
+            tertiary: {
+              main: shades.yellow[100],
+              two: shades.yellow[200],
+              three: shades.yellow[300],
+            },
+            accent: {
+              main: shades.green[100],
+              two: shades.green[200],
+              three: shades.green[300],
+            },
+            text: {
+              main: shades.text[100],
+              two: shades.text[200],
+              three: shades.text[300],
+            },
           }),
     },
     typography: {
       fontFamily: ["Nunito", "sans-serif"].join(","),
       fontSize: 12,
       h1: {
-        fontFamily: ["Nunito", "sans-serif"].join(","),
-        fontSize: 40,
+        fontFamily: ["Amatic SC", "sans-serif"].join(","),
+        fontSize: "5rem",
+        fontWeight: "bold",
       },
       h2: {
         fontFamily: ["Nunito", "sans-serif"].join(","),

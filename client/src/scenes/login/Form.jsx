@@ -143,6 +143,8 @@ const Form = () => {
                   }
                   helperText={touched.firstName && errors.firstName}
                   sx={{
+                    backgroundColor: palette.text.main,
+                    borderRadius: "5px",
                     gridColumn: "span 2",
                   }}
                 />
@@ -155,6 +157,8 @@ const Form = () => {
                   error={Boolean(touched.lastName) && Boolean(errors.lastName)}
                   helperText={touched.lastName && errors.lastName}
                   sx={{
+                    backgroundColor: palette.text.main,
+                    borderRadius: "5px",
                     gridColumn: "span 2",
                   }}
                 />
@@ -166,7 +170,11 @@ const Form = () => {
                   name="email"
                   error={Boolean(touched.email) && Boolean(errors.email)}
                   helperText={touched.email && errors.email}
-                  sx={{ gridColumn: "span 4" }}
+                  sx={{
+                    gridColumn: "span 4",
+                    backgroundColor: palette.text.main,
+                    borderRadius: "5px",
+                  }}
                 />
                 <TextField
                   label="Password"
@@ -177,7 +185,11 @@ const Form = () => {
                   name="password"
                   error={Boolean(touched.password) && Boolean(errors.password)}
                   helperText={touched.password && errors.password}
-                  sx={{ gridColumn: "span 4" }}
+                  sx={{
+                    gridColumn: "span 4",
+                    backgroundColor: palette.text.main,
+                    borderRadius: "5px",
+                  }}
                 />
                 <TextField
                   label="Location"
@@ -188,6 +200,8 @@ const Form = () => {
                   error={Boolean(touched.location) && Boolean(errors.location)}
                   helperText={touched.location && errors.location}
                   sx={{
+                    backgroundColor: palette.text.main,
+                    borderRadius: "5px",
                     gridColumn: "span 4",
                   }}
                 />
@@ -202,6 +216,8 @@ const Form = () => {
                   }
                   helperText={touched.occupation && errors.occupation}
                   sx={{
+                    backgroundColor: palette.text.main,
+                    borderRadius: "5px",
                     gridColumn: "span 4",
                   }}
                 />
@@ -223,6 +239,9 @@ const Form = () => {
                         {...getRootProps()}
                         p="1rem"
                         sx={{
+                          textAlign: "center",
+                          backgroundColor: palette.text.main,
+                          borderRadius: "5px",
                           "&:hover": { cursor: "pointer" },
                         }}
                       >
@@ -251,7 +270,11 @@ const Form = () => {
                   name="email"
                   error={Boolean(touched.email) && Boolean(errors.email)}
                   helperText={touched.email && errors.email}
-                  sx={{ gridColumn: "span 4" }}
+                  sx={{
+                    gridColumn: "span 4",
+                    backgroundColor: palette.text.main,
+                    borderRadius: "5px",
+                  }}
                 />
                 <TextField
                   label="Password"
@@ -262,7 +285,11 @@ const Form = () => {
                   name="password"
                   error={Boolean(touched.password) && Boolean(errors.password)}
                   helperText={touched.password && errors.password}
-                  sx={{ gridColumn: "span 4" }}
+                  sx={{
+                    gridColumn: "span 4",
+                    backgroundColor: palette.text.main,
+                    borderRadius: "5px",
+                  }}
                 />
               </>
             ) : (

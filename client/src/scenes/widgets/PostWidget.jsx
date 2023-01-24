@@ -30,8 +30,6 @@ const PostWidget = ({
   const isLiked = Boolean(likes[loggedInUserId]);
   const likeCount = Object.keys(likes).length;
 
-  const { palette } = useTheme();
-
   const patchLike = async () => {
     const response = await fetch(`http://localhost:5150/posts/${postId}/like`, {
       method: "PATCH",
@@ -49,7 +47,6 @@ const PostWidget = ({
     <WidgetWrapper
       m="2rem 0"
       sx={{
-        backgroundColor: palette.tertiary.one,
         border: `.2rem solid black`,
       }}
     >

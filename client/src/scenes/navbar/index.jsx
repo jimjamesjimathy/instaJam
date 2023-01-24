@@ -37,14 +37,12 @@ const Navbar = () => {
   return (
     <FlexBetween
       padding="1rem 6%"
-      backgroundColor={theme.palette.tertiary.one}
       sx={{
         boxShadow: "2px 2px 12px rgba(0, 0, 0, 0.5)",
       }}
     >
       <FlexBetween gap="1.75rem">
         <Typography
-          color={theme.palette.text.one}
           fontWeight="500"
           letterSpacing="1px"
           fontSize="clamp(1rem, 2rem, 2.25rem)"
@@ -58,12 +56,7 @@ const Navbar = () => {
           instaJam
         </Typography>
         {isNonMobileScreens && (
-          <FlexBetween
-            borderRadius="5px"
-            gap="3rem"
-            padding="0.1rem 1.5rem"
-            backgroundColor={theme.palette.text.three}
-          >
+          <FlexBetween borderRadius="5px" gap="3rem" padding="0.1rem 1.5rem">
             <InputBase placeholder="Search..." />
             <IconButton>
               <Search />
@@ -71,7 +64,6 @@ const Navbar = () => {
           </FlexBetween>
         )}
       </FlexBetween>
-
       {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
         <Box
@@ -84,7 +76,6 @@ const Navbar = () => {
             {theme.palette.mode === "dark" ? (
               <DarkMode
                 sx={{
-                  color: theme.palette.secondary.one,
                   fontSize: "25px",
                   flex: 1,
                 }}
@@ -95,21 +86,18 @@ const Navbar = () => {
           </IconButton>
           <Message
             sx={{
-              color: theme.palette.text.main,
               fontSize: "25px",
               flex: 1,
             }}
           />
           <Notifications
             sx={{
-              color: theme.palette.text.main,
               fontSize: "25px",
               flex: 1,
             }}
           />
           <Help
             sx={{
-              color: theme.palette.text.main,
               fontSize: "25px",
               flex: 1,
             }}
@@ -117,7 +105,6 @@ const Navbar = () => {
           <FormControl
             value={fullName}
             sx={{
-              backgroundColor: theme.palette.text.three,
               borderRadius: "5px",
             }}
           >
@@ -126,10 +113,8 @@ const Navbar = () => {
               sx={{
                 flex: 2,
                 borderRadius: "0.25rem",
-                backgroundColor: "#999",
                 width: "13em",
                 padding: "0.3rem 0",
-                backgroundColor: theme.palette.text.three,
               }}
               input={<InputBase />}
             >
@@ -182,7 +167,6 @@ const Navbar = () => {
           zIndex="10"
           maxWidth="500px"
           minWidth="300px"
-          backgroundColor={theme.palette.text.three}
         >
           {/* CLOSE ICON */}
           <Box display="flex" justifyContent="flex-end" p="1rem">
@@ -228,7 +212,6 @@ const Navbar = () => {
               {theme.palette.mode === "dark" ? (
                 <DarkMode
                   sx={{
-                    color: theme.palette.secondary.one,
                     fontSize: "25px",
                     flex: 1,
                   }}

@@ -17,7 +17,6 @@ import linkedIn from "../../assets/linkedin.png";
 
 const UserWidget = ({ userId, picturePath }) => {
   const [user, setUser] = useState(null);
-  const { palette } = useTheme();
   const navigate = useNavigate();
   const token = useSelector((state) => state.token);
 
@@ -51,7 +50,6 @@ const UserWidget = ({ userId, picturePath }) => {
   return (
     <WidgetWrapper
       sx={{
-        backgroundColor: palette.tertiary.one,
         border: `.2rem solid black`,
       }}
     >
@@ -68,7 +66,6 @@ const UserWidget = ({ userId, picturePath }) => {
               variant="h4"
               fontWeight="500"
               sx={{
-                color: palette.text.one,
                 "&:hover": {
                   cursor: "pointer",
                 },
@@ -79,11 +76,7 @@ const UserWidget = ({ userId, picturePath }) => {
             <Typography>{friends.length} friends</Typography>
           </Box>
         </FlexBetween>
-        <ManageAccountsOutlined
-          sx={{
-            color: palette.primary.five,
-          }}
-        />
+        <ManageAccountsOutlined />
       </FlexBetween>
 
       <Divider />

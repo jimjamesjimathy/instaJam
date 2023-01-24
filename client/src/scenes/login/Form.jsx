@@ -14,8 +14,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../../state/index";
 import Dropzone from "react-dropzone";
-import FlexBetween from "../../components/FlexBetween";
-import AttachmentSharpIcon from "@mui/icons-material/AttachmentSharp";
 
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
@@ -49,12 +47,12 @@ const initialValuesLogin = {
 
 const Form = () => {
   const [pageType, setPageType] = useState("login");
-  const { palette } = useTheme();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isNonMobile = useMediaQuery("(min-width: 600px)");
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
+  const { palette } = useTheme();
 
   // REGISTER FUNCTION
   const register = async (values, onSubmitProps) => {
@@ -135,7 +133,7 @@ const Form = () => {
             {isRegister && (
               <>
                 <TextField
-                  label="First Name"
+                  placeholder="First Name"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.firstName}
@@ -145,13 +143,13 @@ const Form = () => {
                   }
                   helperText={touched.firstName && errors.firstName}
                   sx={{
-                    backgroundColor: palette.text.main,
                     borderRadius: "5px",
                     gridColumn: "span 2",
+                    backgroundColor: "#F5F5F5",
                   }}
                 />
                 <TextField
-                  label="Last Name"
+                  placeholder="Last Name"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.lastName}
@@ -159,13 +157,13 @@ const Form = () => {
                   error={Boolean(touched.lastName) && Boolean(errors.lastName)}
                   helperText={touched.lastName && errors.lastName}
                   sx={{
-                    backgroundColor: palette.text.main,
                     borderRadius: "5px",
                     gridColumn: "span 2",
+                    backgroundColor: "#F5F5F5",
                   }}
                 />
                 <TextField
-                  label="Email"
+                  placeholder="Email"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.email}
@@ -174,12 +172,12 @@ const Form = () => {
                   helperText={touched.email && errors.email}
                   sx={{
                     gridColumn: "span 4",
-                    backgroundColor: palette.text.main,
                     borderRadius: "5px",
+                    backgroundColor: "#F5F5F5",
                   }}
                 />
                 <TextField
-                  label="Password"
+                  placeholder="Password"
                   type="password"
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -189,12 +187,12 @@ const Form = () => {
                   helperText={touched.password && errors.password}
                   sx={{
                     gridColumn: "span 4",
-                    backgroundColor: palette.text.main,
                     borderRadius: "5px",
+                    backgroundColor: "#F5F5F5",
                   }}
                 />
                 <TextField
-                  label="Location"
+                  placeholder="Location"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.location}
@@ -202,13 +200,13 @@ const Form = () => {
                   error={Boolean(touched.location) && Boolean(errors.location)}
                   helperText={touched.location && errors.location}
                   sx={{
-                    backgroundColor: palette.text.main,
                     borderRadius: "5px",
                     gridColumn: "span 4",
+                    backgroundColor: "#F5F5F5",
                   }}
                 />
                 <TextField
-                  label="Occupation"
+                  placeholder="Occupation"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.occupation}
@@ -218,9 +216,9 @@ const Form = () => {
                   }
                   helperText={touched.occupation && errors.occupation}
                   sx={{
-                    backgroundColor: palette.text.main,
                     borderRadius: "5px",
                     gridColumn: "span 4",
+                    backgroundColor: "#F5F5F5",
                   }}
                 />
                 <Box
@@ -243,11 +241,11 @@ const Form = () => {
                         {...getRootProps()}
                         sx={{
                           textAlign: "center",
-                          backgroundColor: palette.text.main,
                           borderRadius: "5px",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
+                          backgroundColor: "#F5F5F5",
                           "&:hover": { cursor: "pointer" },
                         }}
                       >
@@ -286,7 +284,7 @@ const Form = () => {
             {isLogin ? (
               <>
                 <TextField
-                  label="Email"
+                  placeholder="Email"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.email}
@@ -295,14 +293,14 @@ const Form = () => {
                   helperText={touched.email && errors.email}
                   sx={{
                     gridColumn: "span 4",
-                    backgroundColor: palette.text.two,
                     borderRadius: "5px",
                     width: "65%",
                     margin: "0 auto",
+                    backgroundColor: "#F5F5F5",
                   }}
                 />
                 <TextField
-                  label="Password"
+                  placeholder="Password"
                   type="password"
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -310,12 +308,15 @@ const Form = () => {
                   name="password"
                   error={Boolean(touched.password) && Boolean(errors.password)}
                   helperText={touched.password && errors.password}
+                  inputProps={{
+                    color: "#000",
+                  }}
                   sx={{
                     gridColumn: "span 4",
-                    backgroundColor: palette.text.two,
                     borderRadius: "5px",
                     width: "65%",
                     margin: "0 auto",
+                    backgroundColor: "#F5F5F5",
                   }}
                 />
               </>
@@ -334,19 +335,18 @@ const Form = () => {
               variant="outlined"
               type="submit"
               sx={{
-                backgroundColor: palette.accent.one,
                 m: "2rem 0",
-                p: ".5rem",
-                fontSize: "1.1rem",
-                fontWeight: "500",
-                width: "35%",
+                fontSize: ".9rem",
+                fontWeight: "bold",
+                color: "#FFFFFF",
+                width: "10em",
+                backgroundColor: palette.secondary.five,
                 "&:hover": {
-                  backgroundColor: palette.accent.three,
-                  color: palette.text.one,
+                  backgroundColor: palette.secondary.three,
                 },
               }}
             >
-              {isLogin ? "LOG IN" : "REGISTER"}
+              {isLogin ? "Log in" : "register"}
             </Button>
             <Box width="100%">
               <Typography

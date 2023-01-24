@@ -3,12 +3,9 @@ import FlexBetween from "../../components/FlexBetween";
 import WidgetWrapper from "../../components/WidgetWrapper";
 
 const AdvertWidget = () => {
-  const { palette } = useTheme();
-
   return (
     <WidgetWrapper
       sx={{
-        backgroundColor: palette.tertiary.one,
         border: `.2rem solid black`,
       }}
     >

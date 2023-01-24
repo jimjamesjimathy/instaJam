@@ -1,8 +1,8 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Navbar from "../navbar/index";
 import UserWidget from "../widgets/UserWidget";
-import MyPosts from "../widgets/MyPostWidget";
-import PostsWidget from "../widgets/MyPostWidget";
+import MyPostWidget from "../widgets/MyPostWidget";
+import PostsWidget from "../../scenes/widgets/PostsWidget";
 import AdvertWidget from "../widgets/AdvertWidget";
 import FriendsList from "../widgets/FriendsListWidget";
 import { useSelector } from "react-redux";
@@ -29,16 +29,16 @@ const Home = () => {
           flexBasis={isNonMobileScreens ? "42%" : undefined}
           mt={isNonMobileScreens ? undefined : "2rem"}
         >
-          {/* <MyPosts picturePath={picturePath} />
-          <PostsWidget userId={_id} /> */}
+          <MyPostWidget picturePath={picturePath} />
+          <PostsWidget userId={_id} />
         </Box>
-        {/* {isNonMobileScreens && (
+        {isNonMobileScreens && (
           <Box flexBasis="26%">
             <AdvertWidget />
             <Box m="2rem 0" />
             <FriendsList userId={_id} />
           </Box>
-        )} */}
+        )}
       </Box>
     </Box>
   );

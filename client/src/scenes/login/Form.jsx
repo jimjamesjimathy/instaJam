@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { setLogin } from "../../state/index";
 import Dropzone from "react-dropzone";
 import FlexBetween from "../../components/FlexBetween";
+import AttachmentSharpIcon from "@mui/icons-material/AttachmentSharp";
 
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
@@ -122,6 +123,7 @@ const Form = () => {
         <form onSubmit={handleSubmit}>
           <Box
             display="grid"
+            textAlign="center"
             gap="30px"
             gridTemplateColumns="repeat(4, minmax(0, 1fr))"
             sx={{
@@ -223,9 +225,9 @@ const Form = () => {
                 />
                 <Box
                   gridColumn="span 4"
+                  height="5vh"
                   border="1px solid #999"
                   borderRadius="5px"
-                  padding="1rem"
                 >
                   <Dropzone
                     acceptedFiles=".jpg,.jpeg,.png"
@@ -236,23 +238,44 @@ const Form = () => {
                   >
                     {({ getRootProps, getInputProps }) => (
                       <Box
+                        height="100%"
+                        width="100%"
                         {...getRootProps()}
-                        p="1rem"
                         sx={{
                           textAlign: "center",
                           backgroundColor: palette.text.main,
                           borderRadius: "5px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
                           "&:hover": { cursor: "pointer" },
                         }}
                       >
                         <input {...getInputProps()} />
                         {!values.picture ? (
-                          <p>Add Photo Here</p>
+                          <Typography
+                            variant="h5"
+                            fontSize="1.15rem"
+                            fontWeight="300"
+                          >
+                            Upload a Photo
+                          </Typography>
                         ) : (
-                          <FlexBetween>
-                            <Typography>{values.picture.name}</Typography>
+                          <Box
+                            width="100%"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="space-evenly"
+                          >
+                            <Typography
+                              variant="h5"
+                              fontWeight="300"
+                              fontSize="1.2rem"
+                            >
+                              {values.picture.name}
+                            </Typography>
                             <EditOutlinedIcon />
-                          </FlexBetween>
+                          </Box>
                         )}
                       </Box>
                     )}
@@ -272,8 +295,10 @@ const Form = () => {
                   helperText={touched.email && errors.email}
                   sx={{
                     gridColumn: "span 4",
-                    backgroundColor: palette.text.main,
+                    backgroundColor: palette.text.two,
                     borderRadius: "5px",
+                    width: "65%",
+                    margin: "0 auto",
                   }}
                 />
                 <TextField
@@ -287,8 +312,10 @@ const Form = () => {
                   helperText={touched.password && errors.password}
                   sx={{
                     gridColumn: "span 4",
-                    backgroundColor: palette.text.main,
+                    backgroundColor: palette.text.two,
                     borderRadius: "5px",
+                    width: "65%",
+                    margin: "0 auto",
                   }}
                 />
               </>
@@ -296,33 +323,49 @@ const Form = () => {
               <span style={{ display: "none" }} />
             )}
           </Box>
-          <Box>
+          <Box
+            width="100%"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Button
-              fullWidth
+              variant="outlined"
               type="submit"
               sx={{
+                backgroundColor: palette.accent.one,
                 m: "2rem 0",
-                p: "1rem",
-              }}
-            >
-              {isLogin ? "LOGIN" : "REGISTER"}
-            </Button>
-            <Typography
-              onClick={() => {
-                setPageType(isLogin ? "register" : "login");
-                resetForm();
-              }}
-              sx={{
-                textDecoration: "underline",
+                p: ".5rem",
+                fontSize: "1.1rem",
+                fontWeight: "500",
+                width: "35%",
                 "&:hover": {
-                  cursor: "pointer",
+                  backgroundColor: palette.accent.three,
+                  color: palette.text.one,
                 },
               }}
             >
-              {isLogin
-                ? "Don't have an account? Sign Up here."
-                : "Already have an account? Login here."}
-            </Typography>
+              {isLogin ? "LOG IN" : "REGISTER"}
+            </Button>
+            <Box width="100%">
+              <Typography
+                onClick={() => {
+                  setPageType(isLogin ? "register" : "login");
+                  resetForm();
+                }}
+                sx={{
+                  textDecoration: "underline",
+                  "&:hover": {
+                    cursor: "pointer",
+                  },
+                }}
+              >
+                {isLogin
+                  ? "Don't have an account? Sign Up here."
+                  : "Already have an account? Login here."}
+              </Typography>
+            </Box>
           </Box>
         </form>
       )}

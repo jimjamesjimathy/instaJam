@@ -2,7 +2,7 @@ import { PersonAddOutlined, PersonRemoveOutlined } from "@mui/icons-material";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setFriends } from "state";
+import { setFriends } from "../state/index";
 import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
 
@@ -41,7 +41,6 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
           }}
         >
           <Typography
-            color={main}
             variant="h5"
             fontWeight="500"
             sx={{
@@ -52,9 +51,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
           >
             {name}
           </Typography>
-          <Typography color={medium} fontSize="0.75rem">
-            {subtitle}
-          </Typography>
+          <Typography fontSize="0.75rem">{subtitle}</Typography>
         </Box>
       </FlexBetween>
       <IconButton onClick={() => patchFriend()} sx={{ p: "0.6rem" }}>

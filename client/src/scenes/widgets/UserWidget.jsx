@@ -49,7 +49,12 @@ const UserWidget = ({ userId, picturePath }) => {
   } = user;
 
   return (
-    <WidgetWrapper>
+    <WidgetWrapper
+      sx={{
+        backgroundColor: palette.tertiary.one,
+        border: `.2rem solid black`,
+      }}
+    >
       {/* FIRST ROW */}
       <FlexBetween
         gap="0.5rem"
@@ -63,6 +68,7 @@ const UserWidget = ({ userId, picturePath }) => {
               variant="h4"
               fontWeight="500"
               sx={{
+                color: palette.text.one,
                 "&:hover": {
                   cursor: "pointer",
                 },
@@ -73,7 +79,11 @@ const UserWidget = ({ userId, picturePath }) => {
             <Typography>{friends.length} friends</Typography>
           </Box>
         </FlexBetween>
-        <ManageAccountsOutlined />
+        <ManageAccountsOutlined
+          sx={{
+            color: palette.primary.five,
+          }}
+        />
       </FlexBetween>
 
       <Divider />

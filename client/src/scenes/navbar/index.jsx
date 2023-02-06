@@ -85,9 +85,11 @@ const Navbar = () => {
             )}
           </IconButton>
           <Message
+            onClick={() => navigate("/messenger")}
             sx={{
               fontSize: "25px",
               flex: 1,
+              cursor: "pointer",
             }}
           />
           <Notifications

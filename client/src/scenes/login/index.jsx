@@ -20,7 +20,7 @@ const Login = () => {
         padding="3.5rem"
         m="2rem auto"
         borderRadius=".3rem"
-        backgroundColor={palette.primary.five}
+        backgroundColor={palette.primary.main}
       >
         <Box>
           <Box width="100%" marginBottom="2rem">

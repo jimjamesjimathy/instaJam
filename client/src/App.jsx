@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import Home from "./scenes/home/index";
 import Login from "./scenes/login/index";
 import Profile from "./scenes/profile/index";
+import Messenger from "./scenes/chat/Messenger";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { CssBaseline, ThemeProvider, Box } from "@mui/material";
@@ -27,6 +28,10 @@ function App() {
             <Route
               path="/profile/:userId"
               element={isAuth ? <Profile /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/messenger"
+              element={isAuth ? <Messenger /> : <Navigate to="/" />}
             />
           </Routes>
         </ThemeProvider>
